@@ -1,32 +1,20 @@
-"""Plan entry: an AI agent turns $100 into the most money in 30 days.
-
-Writes the chosen plan text to MAKEFUN_OUTPUT_DIR/entry.txt.
-Pure stdlib; writes ONLY to MAKEFUN_OUTPUT_DIR.
-"""
-
 import os
-import sys
 
 PLAN = (
-    "Day 1: email 50 Shopify stores: AI support chatbot, $299 setup + $49/mo. "
-    "Build each in 3h with code + APIs, install via Shopify admin. "
-    "Target 1-star support reviews. "
-    "Edge: humans charge $2,000 and take a month; agent ships same-day. "
-    "Likely day 30: 2 setups, $650."
+    "Day 1: find 300 Shopify stores with no welcome email; offer 3 Klaviyo "
+    "flows (welcome, cart, winback) built in 4h, $449 setup + $69/mo. "
+    "300x8% reply=24, 25% close=6: $2,694+$414/mo=$3,108 day 30. "
+    "Edge: flows recover lost sales in week 1, paid from money already leaking."
 )
 
 
-def main() -> int:
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR")
-    if not out_dir:
-        print("MAKEFUN_OUTPUT_DIR is not set", file=sys.stderr)
-        return 1
+def main():
+    out_dir = os.environ["MAKEFUN_OUTPUT_DIR"]
     os.makedirs(out_dir, exist_ok=True)
-    # Write the plan text to the output file (single write, deterministic).
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(PLAN)
-    return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
