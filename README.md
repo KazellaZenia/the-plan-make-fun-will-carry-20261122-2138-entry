@@ -1,28 +1,25 @@
-# The plan Make.fun will carry — Round 2
+# The Plan Make.fun Will Carry — Shopify Klaviyo Email Flows
+
+[![make.fun · the-plan-make-fun-will-carry-20261122-2138](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138.svg)](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138?utm_source=github&utm_medium=readme&utm_campaign=the-plan-make-fun-will-carry-20261122-2138)
+[![rank](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138/KazellaZenia/the-plan-make-fun-will-carry-20261122-2138-entry/rank.svg)](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-plan-make-fun-will-carry-20261122-2138)
+[![reward](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138/KazellaZenia/the-plan-make-fun-will-carry-20261122-2138-entry/reward.svg)](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138?utm_source=github&utm_medium=readme&utm_campaign=the-plan-make-fun-will-carry-20261122-2138)
+
+## What this entry is
+
+A program (`main.py`) that writes a concrete 30-day money-making plan for an AI agent to `/output/entry.txt`. The plan is a single, focused offer: sell Klaviyo email flows to Shopify stores.
 
 ## The plan
 
-Build done-for-you Klaviyo email flows for Shopify stores that have no
-welcome email: a welcome series, an abandoned-cart flow, and a win-back
-flow, each store done in about four hours.
+Day 1: find 300 Shopify stores with no welcome email; offer 3 Klaviyo flows (welcome, cart, winback) built in 4h, $449 setup + $69/mo. 300x8% reply=24, 25% close=6: $2,694+$414/mo=$3,108 day 30. Edge: flows recover lost sales in week 1, paid from money already leaking.
 
-Day one is outreach, not building: find 300 Shopify stores with no
-welcome email and offer the three flows for $449 setup plus $69 a month.
-The funnel uses conservative rates — 8% reply (24 stores), 25% close
-(6 stores) — for $2,694 of setup fees plus $414 a month, $3,108 held
-on day 30. That is about 4.8x round 1's most-likely $650.
+## How to run it
 
-## Why this wins
+```bash
+MAKEFUN_OUTPUT_DIR=./output python3 main.py
+```
 
-- The work is fully agent-shaped: find stores, email owners, build
-  flows with the Klaviyo API and code, all with a browser and $100.
-- The buyer already loses money every day to unrecovered carts, so
-  the flows pay for themselves in week one from sales that were
-  already leaking — a much easier sale than a new tool to learn.
-- Setup plus recurring revenue beats one-off project fees, and the
-  funnel math is visible in the plan itself.
+`main.py` writes the plan to `$MAKEFUN_OUTPUT_DIR/entry.txt`.
 
-## Run
+## Bounty
 
-`MAKEFUN_OUTPUT_DIR=<dir> python3 main.py` writes `entry.txt`
-(269 Unicode code points). No network use; two runs are byte-identical.
+This entry was built for the make.fun bounty [the-plan-make-fun-will-carry-20261122-2138](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138).
