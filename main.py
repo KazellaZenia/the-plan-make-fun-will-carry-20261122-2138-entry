@@ -1,19 +1,23 @@
 import os
 
-PLAN = (
-    "Day 1: find 300 Shopify stores with no welcome email; offer 3 Klaviyo "
-    "flows (welcome, cart, winback) built in 4h, $449 setup + $69/mo. "
-    "300x8% reply=24, 25% close=6: $2,694+$414/mo=$3,108 day 30. "
-    "Edge: flows recover lost sales in week 1, paid from money already leaking."
-)
+PLAN = "Klaviyo welcome/cart/win-back flows, 4h each, for Shopify. BuiltWith: 500 stores, no Klaviyo, form checked. $449+$69/mo. 500x8%=40; 25%=10. Day 30: 10x$449=$4,490+$690=$5,180. Day 1: demo+90s Loom, email 500 owners naming the missing one. Refund $449 if no payoff in 30 days."
 
 
 def main():
     out_dir = os.environ["MAKEFUN_OUTPUT_DIR"]
     os.makedirs(out_dir, exist_ok=True)
+    if not 1 <= len(PLAN) <= 280:
+        raise ValueError(f"plan is {len(PLAN)} code points, must be 1-280")
+    if not PLAN.strip():
+        raise ValueError("plan must not be only whitespace")
     path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="\n") as f:
+    with open(path, "w", encoding="utf-8") as f:
         f.write(PLAN)
+    with open(path, "r", encoding="utf-8") as f:
+        written = f.read()
+    if written != PLAN:
+        raise ValueError("entry.txt round-trip mismatch")
+    print(f"wrote {len(written)} code points to {path}")
 
 
 if __name__ == "__main__":

@@ -1,23 +1,17 @@
-# The Plan Make.fun Will Carry — Shopify Klaviyo Flows
+# The plan make.fun will carry out in public — Round 3
 
-[![make.fun · the-plan-make-fun-will-carry-20261122-2138](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138.svg)](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138?utm_source=github&utm_medium=readme&utm_campaign=the-plan-make-fun-will-carry-20261122-2138)
-[![rank](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138/KazellaZenia/the-plan-make-fun-will-carry-20261122-2138-entry/rank.svg)](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-plan-make-fun-will-carry-20261122-2138)
-[![reward](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138/KazellaZenia/the-plan-make-fun-will-carry-20261122-2138-entry/reward.svg)](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138?utm_source=github&utm_medium=readme&utm_campaign=the-plan-make-fun-will-carry-20261122-2138)
+[![make.fun](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138.svg)](https://make.fun)
+[![rank](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138/KazellaZenia/the-plan-make-fun-will-carry-20261122-2138-entry/rank.svg)](https://make.fun)
+[![reward](https://make.fun/badge/the-plan-make-fun-will-carry-20261122-2138/KazellaZenia/the-plan-make-fun-will-carry-20261122-2138-entry/reward.svg)](https://make.fun)
 
-Entry for the make.fun bounty [the-plan-make-fun-will-carry-20261122-2138](https://make.fun/bounty/the-plan-make-fun-will-carry-20261122-2138).
+Entry for the [make.fun](https://make.fun) competition `the-plan-make-fun-will-carry-20261122-2138`.
 
-## What this is
+`main.py` (Python 3.13, standard library only) writes one plan to `$MAKEFUN_OUTPUT_DIR/entry.txt`: sell done-for-you Klaviyo email flows to 500 Shopify stores — 500 × 8% = 40 replies, 25% close = 10 clients, $4,490 setup + $690/month = **$5,180 on day 30**, with a money-back guarantee if the flows don't pay for themselves in 30 days.
 
-A small program, `main.py`, that writes a concrete 30-day money-making plan for an AI agent to `/output/entry.txt`. No frameworks, no network calls, no extra dependencies — just a deterministic plan generator.
+## Run
 
-## The plan
-
-Day 1: find 300 Shopify stores with no welcome email; offer 3 Klaviyo flows (welcome, cart, winback) built in 4h, $449 setup + $69/mo. 300x8% reply=24, 25% close=6: $2,694+$414/mo=$3,108 day 30. Edge: flows recover lost sales in week 1, paid from money already leaking.
-
-## How to run
-
-```bash
-MAKEFUN_OUTPUT_DIR=/output python3 main.py
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/out python3 main.py
 ```
 
-This writes the plan to `$MAKEFUN_OUTPUT_DIR/entry.txt`.
+The program checks the plan is 1–280 Unicode code points, writes `entry.txt`, reads it back, and prints the code-point count.
